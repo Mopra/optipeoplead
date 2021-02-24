@@ -6,18 +6,80 @@
 </head>
 <body>
 <style>
-html,body,div,ul,li,a {margin:0;padding:0;top:0;left:0;}
+html,body,div,ul,li,a {
+  margin:0;padding:0;top:0;left:0;font-family: Arial, Helvetica, sans-serif;
+}
 
 .adFrame {
   position: relative;
   width:300px;height:250px;
-  border:solid 1px #000;
+  /*border:solid 1px #000;*/
   z-index: 99999;
+}
+
+img {
+  position: relative;
+  display: block;
+  width:90px;height:auto;
+  margin-left:15px;
+  top: 30px;
+}
+b {
+    display: block;
+    font-size: 12px;
+    position: relative;
+    width: 120px;
+    height: auto;
+    color: #ffff;
+    margin-left: 15px;
+    top: 35px;
 }
 
 .adContent {
   position: absolute;
+  display:block;
   z-index: 99999999;
+  width:100%;
+  max-width:200px;
+  margin: 0;
+  top: 45%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.adContent ul {
+  position: relative;
+  width:100%;
+  padding:20px;
+  margin-bottom:50px;
+}
+.adContent ul li {
+  color:#fff;
+  font-weight: 900;
+  font-size: 20px;
+  padding:0 0 0 15px;
+  text-shadow:
+   -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+}
+.adContent a {
+  position: relative;
+  margin-left:15px;
+  font-weight: 400;
+  font-size: 20px;
+  color:#fff;
+  text-decoration: none;
+  padding: 5px 3px;
+  border-bottom:solid 5px #a3eec8;
+  transition: all .2s;
+}
+.adContent a:hover {
+  background:#a3eec8;
+  padding: 10px 3px;
+  border-bottom:none;
+  color:#000;
 }
 
 .vimeo-wrapper {
@@ -29,19 +91,84 @@ html,body,div,ul,li,a {margin:0;padding:0;top:0;left:0;}
   width:100%;height:100%;
 }
 
+@media (max-width: 768px) {
+  .adFrame {
+    width:100%;height:250px;
+  }
+  .adContent a {
+    margin-left:25px;
+  }
+  .adContent ul li {
+    padding:0 0 0 25px;
+  }
+  img {
+    margin-left:25px;
+  }
+  b {
+    margin-left: 25px;
+  }
+}
 
+
+/********** SLIDER **********/
+
+
+.slide {position: absolute;width: 100%;height: 100%;}
+.slide:nth-child(1) {animation: fading1 20s linear infinite;}
+.slide:nth-child(2) {animation: fading2 20s linear infinite;}
+.slide:nth-child(3) {animation: fading3 20s linear infinite;}
+@keyframes fading1 {
+  0%  {opacity: 0;}
+  6%  {opacity: 1;}
+  11% {opacity: 1;}
+  22% {opacity: 1;}
+  33% {opacity: 0;}
+  44% {opacity: 0;}
+  55% {opacity: 0;}
+  66% {opacity: 0;}
+  77% {opacity: 0;}
+  88% {opacity: 0;}
+  100% {opacity: 0;}
+}
+@keyframes fading2 {
+  0%  {opacity: 0;}
+  11% {opacity: 0;}
+  22% {opacity: 0;}
+  33% {opacity: 1;}
+  44% {opacity: 1;}
+  55% {opacity: 1;}
+  66% {opacity: 0;}
+  77% {opacity: 0;}
+  88% {opacity: 0;}
+  100% {opacity: 0;}
+}
+@keyframes fading3 {
+  0%  {opacity: 0;}
+  11% {opacity: 0;}
+  22% {opacity: 0;}
+  33% {opacity: 0;}
+  44% {opacity: 0;}
+  55% {opacity: 0;}
+  66% {opacity: 1;}
+  77% {opacity: 1;}
+  88% {opacity: 1;}
+  100% {opacity: 0;}
+}
 </style>
 
 <div class="adFrame">
 
   <div class="adContent">
-    <ul class="first-row">
-      <li>Find dine flaskehalsmaskiner</li>
-      <li>Mål oppetiden</li>
-      <li>Find dine årsager til stop og nedbrud</li>
+    <ul class="slider">
+      <li class="slide">Find dine flaskehalsmaskiner</li>
+      <li class="slide">Mål <br>oppetiden</li>
+      <li class="slide">Find dine årsager til stop og nedbrud</li>
     </ul>
 
     <a href="https://optipeople.dk/kom-i-gang">START GRATIS</a>
+    <img src="optipeopleLogo.png">
+    <b>Ring: 23 74 47 05</b>
+
   </div>
 
 <div class="vimeo-wrapper">
